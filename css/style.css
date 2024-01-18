@@ -1,0 +1,402 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #efefef;
+}
+
+/* layout */
+#wrap {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* 추가추가 */
+header {
+    width: 400px;
+    height: 100%;
+    background: linear-gradient(45deg, aqua, royalblue);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    z-index: 99999;
+}
+
+header h1 {
+    font: bold 50px/1 'orbitron';
+    color: #fff;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-150%);
+}
+
+header h1::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 2px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+header h1::before {
+    content: 'UI/UX DEVELOPMENT';
+    display: block;
+    font: 14px/1 'orbitron';
+    color: #fff;
+    padding: auto;
+    left: 0;
+    top: 130px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* sns */
+header ul {
+    position: absolute;
+    left: 40px;
+    bottom: 100px;
+    display: flex;
+    gap: 10px;
+}
+
+header ul li a i {
+    font-size: 20px;
+    color: #fff;
+}
+
+/* main - 컨텐츠 */
+main {
+    margin-left: 400px;
+    padding: 20px;
+}
+
+/* menu */
+main ul {
+    width: 100%;
+    margin: 0 0 10px 0;
+    display: flex;
+    gap: 10px;
+    /* 수정수정 */
+    flex-direction: row-reverse;
+    margin-top: 25px;
+    position:fixed;
+    right: 27px;
+    top: 10px;
+    z-index:999;
+    /* 메뉴 위치 반전*/
+}
+
+main ul li {
+    width: 100px;
+    height: 26px;
+}
+
+main ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font: bold 10px/26px 'orbitron';
+    color: #aaa;
+    letter-spacing: 1px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+}
+
+main ul li.on a {
+    background: linear-gradient(45deg, #67faf3, #58abf8);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.527);
+    color: #fff;
+}
+
+main section {
+    width: 99.5%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+/* pc - 5단 */
+main section article {
+    width: 20%;
+    padding: 12px;
+    box-sizing: border-box;
+
+}
+
+main section article div {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    padding: 14px;
+}
+
+main section article div img {
+    width: 100%;
+}
+
+/* title */
+main section article div h2 {
+    margin-top: 15px;
+    font: bold 11px/1 'orbitron';
+    letter-spacing: 1px;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+main section article div p {
+    font: 10px/1.2 'arial';
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* 4단 */
+@media (max-width:1599px) {
+    header {
+        width: 350px;
+    }
+
+    main {
+        margin-left: 350px;
+    }
+
+    main section article {
+        width: 25%;
+    }
+}
+
+/* 4단 세로구조 */
+@media (max-width:1199px) {
+    header {
+        width: 100%;
+        height: 80px;
+        /* position: relative; */
+
+    }
+
+
+    header {
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(45deg, aqua, royalblue);
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: 0.5s;
+
+    }
+
+
+    header h1 {
+        left: 20px;
+        font: bold 24px/2 'orbitron';
+        transform: translateY(-50%);
+    }
+
+    /* 라인과 직업 가리기 */
+    header h1::before,
+    header h1::after {
+        display: none;
+    }
+
+    /* sns */
+    header ul {
+        left: 89.6%;
+        /* 수정 */
+        bottom: 25px;
+        display: flex;
+        gap: 20px;
+    }
+
+    header ul li a {
+        font-size: 20px;
+    }
+
+    main {
+        width: 96.5%;
+        /* 수정 */
+        margin-left: 0;
+        margin-right: 3.5%;
+        margin-top: 60px;
+        /* 추가추가 */
+
+
+    }
+/* menu */
+    main ul {
+        width: 98%;
+        margin: 0 auto;
+        position: fixed;
+        top: 100px;
+        right: 22px;
+    }
+
+
+    main section {
+        width: 99%;
+        margin: 40px auto;
+    }
+
+    /* 수정수정 */
+
+    main section article {
+        width: 25%;
+    }
+}
+
+/* 3단 그리드 */
+@media (max-width:899px) {
+
+    /* sns */
+    header ul {
+        left: 85%;
+        /* 수정 */
+    }
+
+    main {
+        width: 98.5%;
+        /* 추가 */
+        margin-left: -1%;
+        ;
+        /* 추가 */
+        margin-right: 0.5%;
+        ;
+        /* 추가 */
+
+    }
+
+    main ul {
+        width: 96%;
+        margin: 0 auto;
+    }
+
+    ;
+    /* 추가 */
+
+    main section {
+        display: flex;
+      
+        /* 추가 */
+        width: 95%;
+     
+    }
+
+    main section article {
+        width: 33%;
+    }
+}
+
+/* 2단 */
+@media (max-width:679px) {
+
+    /* sns */
+    header ul {
+        left: 82%;
+        /* 수정 */
+        /* border:1px solid red; */
+    }
+
+    /* menu */
+    main ul {
+        width: 93.5%;
+        margin: 0 auto;
+    }
+
+    /* 수정수정*/
+
+    main section {
+        margin-left: -10px;
+    }
+
+    /* 추가*/
+
+    /* 컨텐츠 */
+    main section article {
+        width: 50%;
+    }
+}
+
+/* 1단 */
+@media (max-width:539px) {
+
+    /* sns */
+   
+    header ul {  /* 삭제, 수정 */
+        /* display: none; */
+       left: 78%; 
+    }
+
+    main {
+        margin-top: 70px;
+    }
+
+    /* 추가 */
+    main ul {
+        display: flex;
+        justify-content: space-between;
+        width: 92%;
+        position:fixed;
+        transform: translate(-50%, -50%);
+        left: 49.5%;
+        z-index:999;
+        top: 110px;
+
+
+    }
+
+    /*
+    main ul li {
+         width: 33%;
+        margin-right: 1%;
+        margin-left: -5px; 
+    }*/
+    main ul li a {
+        display: block;
+        padding: 0 3px;
+    }
+
+    main ul li:nth-of-type(1) {
+        margin-right: 0%;
+    }
+
+    /* main section {
+        padding: 0; margin: 0;
+    } */
+    /*main section {margin-left: -10px;} 수정수정 */
+
+    /* 컨텐츠 */
+    main section {
+        margin-top: 20px;
+    }
+
+    main section article {
+        width: 100%;
+        padding: 10px;
+    }
+}
